@@ -7,7 +7,7 @@ public class Calculator {
     private IAdder adder;
 
     public Calculator() {
-        this.adder = new Adder();
+        this.adder = new X2Adder();
     }
 
     public double add(double d1, double d2) {
