@@ -3,6 +3,7 @@ package shibas11.DesignPattern;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
+import shibas11.DesignPattern.SOLID.SRP.Employee;
 import shibas11.DesignPattern.SOLID.SRP.Student;
 
 /**
@@ -14,8 +15,9 @@ public class ExamRunner {
         switch (code) {
             case "SOLID.SRP":
                 Student st = new Student("Jake");
+                Employee em = new Employee("Lee");
                 st.study();
-                st.work();
+                em.work();
                 break;
             case "SOLID.DIP":
                 IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
