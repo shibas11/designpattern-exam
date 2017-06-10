@@ -12,6 +12,10 @@ public class Triangle {
         this.height = height;
     }
 
+    public double getArea() {
+        return getWidth() * getHeight() / 2;
+    }
+
     public double getWidth() {
         return width;
     }

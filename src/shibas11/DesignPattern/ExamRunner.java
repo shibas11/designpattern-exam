@@ -32,8 +32,8 @@ public class ExamRunner {
                 List<Object> list = new LinkedList<Object>();
                 list.add(rect);
                 list.add(tri);
-                System.out.println(String.format("사각형의 넓이는 %f", ac.getArea(rect)));
-                System.out.println(String.format("삼각형의 넓이는 %f", ac.getArea(tri)));
+                System.out.println(String.format("사각형의 넓이는 %f", rect.getArea()));
+                System.out.println(String.format("삼각형의 넓이는 %f", tri.getArea()));
                 System.out.println(String.format("넓이의 총합은 %f", ac.getTotalArea(list)));
                 break;
             case "SOLID.DIP":
