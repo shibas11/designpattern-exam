@@ -3,7 +3,7 @@ package shibas11.DesignPattern.SOLID.OCP;
 /**
  * Created by shiba on 2017-06-11.
  */
-public class Rectangle {
+public class Rectangle implements Shape {
     private double height;
     private double width;
 
@@ -12,14 +12,17 @@ public class Rectangle {
         this.height = height;
     }
 
+    @Override
     public double getArea() {
         return getWidth() * getHeight();
     }
 
+    @Override
     public double getHeight() {
         return height;
     }
 
+    @Override
     public double getWidth() {
         return width;
     }
