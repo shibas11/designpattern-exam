@@ -5,6 +5,7 @@ import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
 import shibas11.DesignPattern.SOLID.OCP.AreaCalculator;
 import shibas11.DesignPattern.SOLID.OCP.Rectangle;
+import shibas11.DesignPattern.SOLID.OCP.Shape;
 import shibas11.DesignPattern.SOLID.OCP.Triangle;
 import shibas11.DesignPattern.SOLID.SRP.Employee;
 import shibas11.DesignPattern.SOLID.SRP.Student;
@@ -29,7 +30,7 @@ public class ExamRunner {
                 AreaCalculator ac = new AreaCalculator();
                 Rectangle rect = new Rectangle(2, 3);
                 Triangle tri = new Triangle(2, 3);
-                List<Object> list = new LinkedList<Object>();
+                List<Shape> list = new LinkedList<>();
                 list.add(rect);
                 list.add(tri);
                 System.out.println(String.format("사각형의 넓이는 %f", rect.getArea()));

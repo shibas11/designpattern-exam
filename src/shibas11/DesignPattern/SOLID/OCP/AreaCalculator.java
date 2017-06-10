@@ -7,18 +7,10 @@ import java.util.List;
  */
 public class AreaCalculator {
 
-    public double getTotalArea(List<Object> list) {
+    public double getTotalArea(List<Shape> list) {
         double tot = 0;
-        for (Object obj : list) {
-            if (obj instanceof Rectangle) {
-                Rectangle rect = (Rectangle) obj;
-                tot += rect.getArea();
-            } else if (obj instanceof Triangle) {
-                Triangle tri = (Triangle) obj;
-                tot += tri.getArea();
-            }
-        }
-
+        for (Shape obj : list)
+            tot += obj.getArea();
         return tot;
     }
 }
