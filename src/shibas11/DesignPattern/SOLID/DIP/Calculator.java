@@ -10,6 +10,10 @@ public class Calculator {
         this.adder = new X2Adder();
     }
 
+    public Calculator(IAdder adder) {
+        this.adder = adder;
+    }
+
     public double add(double d1, double d2) {
         return this.adder.add(d1, d2);
     }

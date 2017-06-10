@@ -1,6 +1,8 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
+import shibas11.DesignPattern.SOLID.DIP.IAdder;
 
 /**
  * Created by shiba on 2017-06-10.
@@ -10,7 +12,8 @@ public class ExamRunner {
         System.out.println("=== " + code + " ===");
         switch (code) {
             case "SOLID.DIP":
-                Calculator cal = new Calculator();
+                IAdder adder = AdderFactory.create(AdderFactory.AdderType.NORMAL);
+                Calculator cal = new Calculator(adder);
                 System.out.println("1 + 2 = " + cal.add(1, 2));
                 break;
             default:
