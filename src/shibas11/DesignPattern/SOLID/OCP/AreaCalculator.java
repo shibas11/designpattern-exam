@@ -7,4 +7,8 @@ public class AreaCalculator {
     public double getArea(Rectangle rectangle) {
         return rectangle.getWidth() * rectangle.getHeight();
     }
+
+    public double getArea(Triangle triangle) {
+        return triangle.getWidth() * triangle.getHeight() / 2;
+    }
 }

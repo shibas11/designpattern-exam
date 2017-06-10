@@ -25,6 +25,7 @@ public class ExamRunner {
             case "SOLID.OCP":
                 AreaCalculator ac = new AreaCalculator();
                 System.out.println(String.format("사각형의 넓이는 %f", ac.getArea(new Rectangle(2, 3))));
+                System.out.println(String.format("삼각형의 넓이는 %f", ac.getArea(new Triangle(2, 3))));
                 break;
             case "SOLID.DIP":
                 IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
