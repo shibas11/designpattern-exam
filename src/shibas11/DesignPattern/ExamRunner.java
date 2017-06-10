@@ -12,8 +12,9 @@ public class ExamRunner {
         System.out.println("=== " + code + " ===");
         switch (code) {
             case "SOLID.DIP":
-                IAdder adder = AdderFactory.create(AdderFactory.AdderType.NORMAL);
-                Calculator cal = new Calculator(adder);
+                IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
+                Calculator cal = new Calculator();
+                cal.setAdder(adder);
                 System.out.println("1 + 2 = " + cal.add(1, 2));
                 break;
             default:

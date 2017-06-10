@@ -17,4 +17,8 @@ public class Calculator {
     public double add(double d1, double d2) {
         return this.adder.add(d1, d2);
     }
+
+    public void setAdder(IAdder adder) {
+        this.adder = adder;
+    }
 }
