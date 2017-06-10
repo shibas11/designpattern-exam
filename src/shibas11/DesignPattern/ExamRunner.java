@@ -9,6 +9,9 @@ import shibas11.DesignPattern.SOLID.OCP.Triangle;
 import shibas11.DesignPattern.SOLID.SRP.Employee;
 import shibas11.DesignPattern.SOLID.SRP.Student;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by shiba on 2017-06-10.
  */
@@ -24,8 +27,14 @@ public class ExamRunner {
                 break;
             case "SOLID.OCP":
                 AreaCalculator ac = new AreaCalculator();
-                System.out.println(String.format("사각형의 넓이는 %f", ac.getArea(new Rectangle(2, 3))));
-                System.out.println(String.format("삼각형의 넓이는 %f", ac.getArea(new Triangle(2, 3))));
+                Rectangle rect = new Rectangle(2, 3);
+                Triangle tri = new Triangle(2, 3);
+                List<Object> list = new LinkedList<Object>();
+                list.add(rect);
+                list.add(tri);
+                System.out.println(String.format("사각형의 넓이는 %f", ac.getArea(rect)));
+                System.out.println(String.format("삼각형의 넓이는 %f", ac.getArea(tri)));
+                System.out.println(String.format("넓이의 총합은 %f", ac.getTotalArea(list)));
                 break;
             case "SOLID.DIP":
                 IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
