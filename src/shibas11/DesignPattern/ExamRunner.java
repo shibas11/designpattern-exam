@@ -3,6 +3,9 @@ package shibas11.DesignPattern;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
+import shibas11.DesignPattern.SOLID.OCP.AreaCalculator;
+import shibas11.DesignPattern.SOLID.OCP.Rectangle;
+import shibas11.DesignPattern.SOLID.OCP.Triangle;
 import shibas11.DesignPattern.SOLID.SRP.Employee;
 import shibas11.DesignPattern.SOLID.SRP.Student;
 
@@ -18,6 +21,10 @@ public class ExamRunner {
                 Employee em = new Employee("Lee");
                 st.study();
                 em.work();
+                break;
+            case "SOLID.OCP":
+                AreaCalculator ac = new AreaCalculator();
+                System.out.println(String.format("사각형의 넓이는 %f", ac.getArea(new Rectangle(2, 3))));
                 break;
             case "SOLID.DIP":
                 IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
