@@ -3,6 +3,7 @@ package shibas11.DesignPattern;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
+import shibas11.DesignPattern.SOLID.LSP.DiscountedBag;
 import shibas11.DesignPattern.SOLID.OCP.AreaCalculator;
 import shibas11.DesignPattern.SOLID.OCP.Rectangle;
 import shibas11.DesignPattern.SOLID.OCP.Shape;
@@ -36,6 +37,14 @@ public class ExamRunner {
                 System.out.println(String.format("사각형의 넓이는 %f", rect.getArea()));
                 System.out.println(String.format("삼각형의 넓이는 %f", tri.getArea()));
                 System.out.println(String.format("넓이의 총합은 %f", ac.getTotalArea(list)));
+                break;
+            case "SOLID.LSP":
+                DiscountedBag bag = new DiscountedBag();
+                bag.setDiscountedRate(0.5);
+                bag.setPrice(100);
+                System.out.println("가방 가격 설정: 100");
+                System.out.println("가방 가격은? " + bag.getPrice());
+
                 break;
             case "SOLID.DIP":
                 IAdder adder = AdderFactory.create(AdderFactory.AdderType.X2);
