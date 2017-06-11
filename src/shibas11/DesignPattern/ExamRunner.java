@@ -3,6 +3,9 @@ package shibas11.DesignPattern;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
+import shibas11.DesignPattern.SOLID.ISP.Bird;
+import shibas11.DesignPattern.SOLID.ISP.Penguin;
+import shibas11.DesignPattern.SOLID.ISP.Pigeon;
 import shibas11.DesignPattern.SOLID.LSP.DiscountedBag;
 import shibas11.DesignPattern.SOLID.OCP.AreaCalculator;
 import shibas11.DesignPattern.SOLID.OCP.Rectangle;
@@ -51,6 +54,17 @@ public class ExamRunner {
                 Calculator cal = new Calculator();
                 cal.setAdder(adder);
                 System.out.println("1 + 2 = " + cal.add(1, 2));
+                break;
+
+            case "SOLID.ISP":
+                Bird pigeon = new Pigeon();
+                pigeon.eat();
+                pigeon.sing();
+                pigeon.fly();
+                Bird penguin = new Penguin();
+                penguin.eat();
+                penguin.sing();
+                penguin.fly();
                 break;
             default:
                 break;
