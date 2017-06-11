@@ -11,7 +11,7 @@ public class User {
     }
 
     public void print() {
-        Printer printer = Printer.getPrinter();
+        Printer printer = RealPrinter.getPrinter();
         printer.print(this.name + " print using " + printer.toString() + ".");
     }
 }

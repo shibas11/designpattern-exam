@@ -11,7 +11,7 @@ public class UserThread extends Thread {
     @Override
     public void run() {
         //super.run();
-        Printer printer = Printer.getPrinter();
+        Printer printer = RealPrinter.getPrinter();
         printer.print(Thread.currentThread().getName() + " print using " + printer.toString() + ".");
     }
 }
