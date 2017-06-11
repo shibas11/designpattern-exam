@@ -1,8 +1,14 @@
 package shibas11.DesignPattern;
 
-import shibas11.DesignPattern.GoF.behavioral.Strategy.WaterMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.PocketMonster;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.WaterMon;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.FireBreathStrategy;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.OneMillionVoltsThunderStrategy;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -71,11 +77,24 @@ public class ExamRunner {
 
             case "Strategy":
                 PocketMonster fireMon = new FireMon("FireMon");
+                fireMon.setMovingStrategy(new SwimmingStrategy());
+                fireMon.setAttackStrategy(new FireBreathStrategy());
                 fireMon.move();
                 fireMon.attack();
+
                 PocketMonster waterMon = new WaterMon("WaterMon");
+                waterMon.setMovingStrategy(new RunningStrategy());
+                waterMon.setAttackStrategy(new WaterBombStrategy());
                 waterMon.move();
                 waterMon.attack();
+
+                PocketMonster pikachu = new Pikachu("pikachu");
+                pikachu.setMovingStrategy(new RunningStrategy());
+                pikachu.setAttackStrategy(new FireBreathStrategy());
+                pikachu.move();
+                pikachu.attack();
+                pikachu.setAttackStrategy(new OneMillionVoltsThunderStrategy());
+                pikachu.attack();
                 break;
             default:
                 break;

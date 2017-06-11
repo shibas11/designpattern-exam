@@ -7,14 +7,4 @@ public class FireMon extends PocketMonster {
     public FireMon(String name) {
         super(name);
     }
-
-    @Override
-    public void move() {
-        System.out.println(this.getName() + ": run!");
-    }
-
-    @Override
-    public void attack() {
-        System.out.println(this.getName() + ": fire breath!");
-    }
 }
