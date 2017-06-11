@@ -5,6 +5,7 @@ package shibas11.DesignPattern.GoF.creational.Singleton;
  */
 public class Printer {
     private static Printer printer;
+    private int counter = 0;
 
     private Printer() {
     }
@@ -21,7 +22,8 @@ public class Printer {
     }
 
     public void print(String str) {
-        System.out.println(str);
+        counter++;
+        System.out.println(str + "counter= " + counter);
     }
 
 }
