@@ -10,8 +10,7 @@ public class DiscountedBag extends Bag {
         this.discountedRate = discountedRate;
     }
 
-    @Override
-    public void setPrice(int price) {
+    public void applyDiscount(int price) {
         super.setPrice(price - (int) (price * discountedRate));
     }
 }

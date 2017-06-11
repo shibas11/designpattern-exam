@@ -41,7 +41,7 @@ public class ExamRunner {
             case "SOLID.LSP":
                 DiscountedBag bag = new DiscountedBag();
                 bag.setDiscountedRate(0.5);
-                bag.setPrice(100);
+                bag.applyDiscount(100);
                 System.out.println("가방 가격 설정: 100");
                 System.out.println("가방 가격은? " + bag.getPrice());
 
