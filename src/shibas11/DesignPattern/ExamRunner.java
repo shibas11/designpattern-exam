@@ -1,5 +1,8 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.Strategy.WaterMon;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
+import shibas11.DesignPattern.GoF.behavioral.Strategy.PocketMonster;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -64,6 +67,15 @@ public class ExamRunner {
                 Bird penguin = new Penguin();
                 penguin.eat();
                 penguin.sing();
+                break;
+
+            case "Strategy":
+                PocketMonster fireMon = new FireMon("FireMon");
+                fireMon.move();
+                fireMon.attack();
+                PocketMonster waterMon = new WaterMon("WaterMon");
+                waterMon.move();
+                waterMon.attack();
                 break;
             default:
                 break;
