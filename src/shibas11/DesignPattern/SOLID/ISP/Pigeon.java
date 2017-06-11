@@ -3,7 +3,7 @@ package shibas11.DesignPattern.SOLID.ISP;
 /**
  * Created by shiba on 2017-06-11.
  */
-public class Pigeon implements Bird {
+public class Pigeon implements Bird, Flyable {
     @Override
     public void sing() {
         System.out.println("coo coo coo coo");

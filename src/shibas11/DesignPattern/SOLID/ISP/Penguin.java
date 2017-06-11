@@ -13,9 +13,4 @@ public class Penguin implements Bird {
     public void eat() {
         System.out.println("eat eat");
     }
-
-    @Override
-    public void fly() {
-        System.out.println("???????????????????");
-    }
 }

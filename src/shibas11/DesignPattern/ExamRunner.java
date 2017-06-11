@@ -57,14 +57,13 @@ public class ExamRunner {
                 break;
 
             case "SOLID.ISP":
-                Bird pigeon = new Pigeon();
+                Pigeon pigeon = new Pigeon();
                 pigeon.eat();
                 pigeon.sing();
                 pigeon.fly();
                 Bird penguin = new Penguin();
                 penguin.eat();
                 penguin.sing();
-                penguin.fly();
                 break;
             default:
                 break;
