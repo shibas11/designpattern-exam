@@ -10,8 +10,13 @@ public class Printer {
     }
 
     public static Printer getPrinter() {
-        if(printer == null)
+        if (printer == null) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+            }
             printer = new Printer();
+        }
         return printer;
     }
 

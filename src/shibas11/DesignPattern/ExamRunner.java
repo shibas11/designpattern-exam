@@ -10,6 +10,7 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.creational.Singleton.User;
+import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -99,11 +100,17 @@ public class ExamRunner {
                 break;
 
             case "Singleton":
-                final int User_NUM = 5;
-                User[] user = new User[User_NUM];
-                for(int i=0;i<User_NUM;i++) {
-                    user[i] = new User((i+1) +"-user");
-                    user[i].print();
+//                final int User_NUM = 5;
+//                User[] user = new User[User_NUM];
+//                for(int i=0;i<User_NUM;i++) {
+//                    user[i] = new User((i+1) +"-user");
+//                    user[i].print();
+//                }
+                final int Thread_NUM = 5;
+                UserThread[] tuser = new UserThread[Thread_NUM];
+                for (int i = 0; i < Thread_NUM; i++) {
+                    tuser[i] = new UserThread((i + 1) + "-userThread");
+                    tuser[i].start();
                 }
                 break;
             default:
