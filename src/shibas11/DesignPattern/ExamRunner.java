@@ -1,5 +1,6 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.PocketMonster;
@@ -112,6 +113,14 @@ public class ExamRunner {
                     tuser[i] = new UserThread((i + 1) + "-userThread");
                     tuser[i].start();
                 }
+                break;
+
+            case "State":
+                Light light = new Light();
+                light.off_button_pushed();
+                light.on_button_pushed();
+                light.on_button_pushed();
+                light.off_button_pushed();
                 break;
             default:
                 break;
