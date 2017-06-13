@@ -7,7 +7,7 @@ public class Light {
     private State state; // 형광등 상태
 
     public Light() {
-        state = new OFF(); // 초기상태는 OFF
+        state = OFF.getInstance(); // 초기상태는 OFF
     }
 
     public void on_button_pushed() {

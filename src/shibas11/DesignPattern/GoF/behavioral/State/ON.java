@@ -5,7 +5,13 @@ package shibas11.DesignPattern.GoF.behavioral.State;
  */
 public class ON implements State {
 
-    public ON() {
+    private static ON on = new ON();
+
+    private ON() {
+    }
+
+    public static ON getInstance() {
+        return on;
     }
 
     @Override
@@ -16,7 +22,7 @@ public class ON implements State {
     @Override
     public void off_button_pushed(Light light) {
         System.out.println("Light Off");
-        light.setState(new OFF());
-
+        light.setState(OFF.getInstance());
     }
+
 }
