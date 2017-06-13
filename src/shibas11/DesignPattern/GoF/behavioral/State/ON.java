@@ -16,7 +16,8 @@ public class ON implements State {
 
     @Override
     public void on_button_pushed(Light light) {
-        System.out.println("반응 없음");
+        System.out.println("취침등 상태");
+        light.setState(SLEEPING.getInstance());
     }
 
     @Override
@@ -24,5 +25,4 @@ public class ON implements State {
         System.out.println("Light Off");
         light.setState(OFF.getInstance());
     }
-
 }
