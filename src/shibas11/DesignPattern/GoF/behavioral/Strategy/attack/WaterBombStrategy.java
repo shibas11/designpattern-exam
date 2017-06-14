@@ -1,7 +1,5 @@
 package shibas11.DesignPattern.GoF.behavioral.Strategy.attack;
 
-import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.AttackStrategy;
-
 /**
  * Created by shiba on 2017-06-11.
  */

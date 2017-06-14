@@ -11,19 +11,19 @@ public class PrinterFactory {
     }
 
     public synchronized static PrinterFactory getPrinterFactory() {
-        if(printerFactory == null) {
+        if (printerFactory == null) {
             printerFactory = new PrinterFactory();
         }
         return printerFactory;
     }
 
-    // 정적 setter 메소드
-    public static void setPrinter(Printer printer) {
-        PrinterFactory.printer = printer;
-    }
-
     // 정적 getter 메소드
     public static Printer getPrinter() {
         return PrinterFactory.printer;
+    }
+
+    // 정적 setter 메소드
+    public static void setPrinter(Printer printer) {
+        PrinterFactory.printer = printer;
     }
 }
