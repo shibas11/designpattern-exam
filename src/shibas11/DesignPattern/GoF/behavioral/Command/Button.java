@@ -5,29 +5,17 @@ package shibas11.DesignPattern.GoF.behavioral.Command;
  */
 public class Button {
 
-    private Lamp lamp;
-    private Alarm alarm;
-    private ButtonMode mode;
+    private Command command;
 
-    public Button(Lamp lamp, Alarm alarm) {
-        this.lamp = lamp;
-        this.alarm = alarm;
-    }
-
-    public void setMode(ButtonMode mode) {
-        this.mode = mode;
+    public Button(Command command) {
+        this.command = command;
     }
 
     public void pressed() {
-        switch (mode) {
-            case LAMP:
-                lamp.turnOn();
-                break;
-            case ALARM:
-                alarm.start();
-                break;
-        }
+        this.command.execute();
+    }
+
+    public void setCommand(Command command) {
+        this.command = command;
     }
 }
-
-;

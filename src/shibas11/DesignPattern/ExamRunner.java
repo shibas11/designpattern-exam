@@ -1,9 +1,6 @@
 package shibas11.DesignPattern;
 
-import shibas11.DesignPattern.GoF.behavioral.Command.Alarm;
-import shibas11.DesignPattern.GoF.behavioral.Command.Button;
-import shibas11.DesignPattern.GoF.behavioral.Command.ButtonMode;
-import shibas11.DesignPattern.GoF.behavioral.Command.Lamp;
+import shibas11.DesignPattern.GoF.behavioral.Command.*;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
@@ -14,7 +11,6 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.OneMillionVoltsThun
 import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
-import shibas11.DesignPattern.GoF.creational.Singleton.User;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
@@ -128,14 +124,13 @@ public class ExamRunner {
                 break;
 
             case "Command":
-                Lamp lamp = new Lamp();
-                Alarm alarm = new Alarm();
-                Button button = new Button(lamp, alarm);
+                LampOnCommand lampOnCommand = new LampOnCommand(new Lamp());
+                AlarmOnCommand alarmOnCommand = new AlarmOnCommand(new Alarm());
 
-                button.setMode(ButtonMode.LAMP);
+                Button button = new Button(lampOnCommand);
                 button.pressed();
 
-                button.setMode(ButtonMode.ALARM);
+                button.setCommand(alarmOnCommand);
                 button.pressed();
                 break;
 
