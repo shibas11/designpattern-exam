@@ -1,6 +1,8 @@
 package shibas11.DesignPattern;
 
 import shibas11.DesignPattern.GoF.behavioral.Command.*;
+import shibas11.DesignPattern.GoF.behavioral.Observer.DataSheetView;
+import shibas11.DesignPattern.GoF.behavioral.Observer.ScoreRecord;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
@@ -137,6 +139,20 @@ public class ExamRunner {
 
                 button.setCommand(lampOffCommand);
                 button.pressed();
+                break;
+
+            case "Observer":
+                ScoreRecord scoreRecord = new ScoreRecord();
+                DataSheetView dataSheetView = new DataSheetView(scoreRecord, 3);
+
+                scoreRecord.setDataSheetView(dataSheetView);
+
+                for (int index = 1; index <= 5; index++) {
+                    int score = index * 10;
+                    System.out.println("Adding " + score);
+
+                    scoreRecord.addScore(score);
+                }
                 break;
 
             default:

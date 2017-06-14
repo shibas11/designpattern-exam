@@ -37,6 +37,11 @@ public class Main {
         이벤트가 발생했을 때 실행될 기능이 다양하면서도 변경이 필요한 경우에
         이벤트를 발생시키는 클래스를 변경하지 앟고 재사용하고자 할 때 유용함.
          */
-        runner.run("Command");
+        //runner.run("Command");
+
+        /*
+        행위.옵저버 패턴 behavioral.Observer
+         */
+        runner.run("Observer");
     }
 }
