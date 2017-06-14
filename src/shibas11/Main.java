@@ -29,6 +29,11 @@ public class Main {
         /*
         행위.스테이트 패턴 behavioral.State
          */
-        runner.run("State");
+        //runner.run("State");
+
+        /*
+        행위.커맨드 패턴 behavioral.Command
+         */
+        runner.run("Command");
     }
 }

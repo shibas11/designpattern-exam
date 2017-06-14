@@ -1,5 +1,7 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.Command.Button;
+import shibas11.DesignPattern.GoF.behavioral.Command.Lamp;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
@@ -122,6 +124,13 @@ public class ExamRunner {
                 light.on_button_pushed();
                 light.off_button_pushed();
                 break;
+
+            case "Command":
+                Lamp lamp = new Lamp();
+                Button lampButton = new Button(lamp);
+                lampButton.pressed();
+                break;
+
             default:
                 break;
         }
