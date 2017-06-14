@@ -124,13 +124,18 @@ public class ExamRunner {
                 break;
 
             case "Command":
-                LampOnCommand lampOnCommand = new LampOnCommand(new Lamp());
+                Lamp lamp = new Lamp();
+                LampOnCommand lampOnCommand = new LampOnCommand(lamp);
+                LampOffCommand lampOffCommand = new LampOffCommand(lamp);
                 AlarmOnCommand alarmOnCommand = new AlarmOnCommand(new Alarm());
 
                 Button button = new Button(lampOnCommand);
                 button.pressed();
 
                 button.setCommand(alarmOnCommand);
+                button.pressed();
+
+                button.setCommand(lampOffCommand);
                 button.pressed();
                 break;
 
