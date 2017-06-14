@@ -1,6 +1,8 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.Command.Alarm;
 import shibas11.DesignPattern.GoF.behavioral.Command.Button;
+import shibas11.DesignPattern.GoF.behavioral.Command.ButtonMode;
 import shibas11.DesignPattern.GoF.behavioral.Command.Lamp;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
@@ -127,8 +129,14 @@ public class ExamRunner {
 
             case "Command":
                 Lamp lamp = new Lamp();
-                Button lampButton = new Button(lamp);
-                lampButton.pressed();
+                Alarm alarm = new Alarm();
+                Button button = new Button(lamp, alarm);
+
+                button.setMode(ButtonMode.LAMP);
+                button.pressed();
+
+                button.setMode(ButtonMode.ALARM);
+                button.pressed();
                 break;
 
             default:
