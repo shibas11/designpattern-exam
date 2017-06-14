@@ -1,5 +1,6 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.Command.*;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.Pikachu;
@@ -10,7 +11,6 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.OneMillionVoltsThun
 import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
-import shibas11.DesignPattern.GoF.creational.Singleton.User;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
@@ -122,6 +122,23 @@ public class ExamRunner {
                 light.on_button_pushed();
                 light.off_button_pushed();
                 break;
+
+            case "Command":
+                Lamp lamp = new Lamp();
+                LampOnCommand lampOnCommand = new LampOnCommand(lamp);
+                LampOffCommand lampOffCommand = new LampOffCommand(lamp);
+                AlarmOnCommand alarmOnCommand = new AlarmOnCommand(new Alarm());
+
+                Button button = new Button(lampOnCommand);
+                button.pressed();
+
+                button.setCommand(alarmOnCommand);
+                button.pressed();
+
+                button.setCommand(lampOffCommand);
+                button.pressed();
+                break;
+
             default:
                 break;
         }

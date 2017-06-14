@@ -28,7 +28,15 @@ public class Main {
 
         /*
         행위.스테이트 패턴 behavioral.State
+        어떤 행위를 수행할 때 상태에 행위를 수행하도록 위임함.
          */
-        runner.run("State");
+        //runner.run("State");
+
+        /*
+        행위.커맨드 패턴 behavioral.Command
+        이벤트가 발생했을 때 실행될 기능이 다양하면서도 변경이 필요한 경우에
+        이벤트를 발생시키는 클래스를 변경하지 앟고 재사용하고자 할 때 유용함.
+         */
+        runner.run("Command");
     }
 }
