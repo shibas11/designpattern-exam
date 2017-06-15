@@ -9,12 +9,14 @@ import java.util.List;
 public class ScoreRecord {
 
     private List<Integer> scores = new ArrayList<>();
-    private DataSheetView dataSheetView;
+    private List<DataSheetView> dataSheetViews = new ArrayList<>();
     private MinMaxView minMaxView;
 
     public void addScore(int score) {
         scores.add(score);
-        dataSheetView.update();
+        for(DataSheetView view : dataSheetViews) {
+            view.update();
+        }
         minMaxView.update();
     }
 
@@ -22,8 +24,8 @@ public class ScoreRecord {
         return scores;
     }
 
-    public void setDataSheetView(DataSheetView dataSheetView) {
-        this.dataSheetView = dataSheetView;
+    public void addDataSheetView(DataSheetView dataSheetView) {
+        dataSheetViews.add(dataSheetView);
     }
 
     public void setMinMaxView(MinMaxView minMaxView) {

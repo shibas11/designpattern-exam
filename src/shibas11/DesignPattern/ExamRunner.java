@@ -144,10 +144,12 @@ public class ExamRunner {
 
             case "Observer":
                 ScoreRecord scoreRecord = new ScoreRecord();
-                DataSheetView dataSheetView = new DataSheetView(scoreRecord, 3);
+                DataSheetView dataSheetView3 = new DataSheetView(scoreRecord, 3);
+                DataSheetView dataSheetView5 = new DataSheetView(scoreRecord, 5);
                 MinMaxView minMaxView = new MinMaxView(scoreRecord);
 
-                scoreRecord.setDataSheetView(dataSheetView);
+                scoreRecord.addDataSheetView(dataSheetView3);
+                scoreRecord.addDataSheetView(dataSheetView5);
                 scoreRecord.setMinMaxView(minMaxView);
 
                 for (int index = 1; index <= 5; index++) {
