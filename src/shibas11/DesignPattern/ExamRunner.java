@@ -18,6 +18,7 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplay;
 import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplayWithLane;
+import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplayWithTraffic;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -169,6 +170,9 @@ public class ExamRunner {
 
                 RoadDisplayWithLane roadDisplayWithLane = new RoadDisplayWithLane();
                 roadDisplayWithLane.draw();
+
+                RoadDisplayWithTraffic roadDisplayWithTraffic = new RoadDisplayWithTraffic();
+                roadDisplayWithTraffic.draw();
                 break;
 
             default:
