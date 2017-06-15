@@ -1,0 +1,28 @@
+package shibas11.DesignPattern.GoF.behavioral.Observer;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Created by SDS on 2017-06-15.
+ */
+public class MinMaxView {
+
+    private ScoreRecord scoreRecord;
+
+    public MinMaxView(ScoreRecord scoreRecord) {
+        this.scoreRecord = scoreRecord;
+    }
+
+    public void update() {
+        List<Integer> record = scoreRecord.getScoreRecords();
+        displayScores(record);
+    }
+
+    private void displayScores(List<Integer> record) {
+        int min = Collections.min(record, null);
+        int max = Collections.max(record, null);
+        System.out.println("Min: " + min + " Max: " + max);
+    }
+}

@@ -10,11 +10,12 @@ public class ScoreRecord {
 
     private List<Integer> scores = new ArrayList<>();
     private DataSheetView dataSheetView;
+    private MinMaxView minMaxView;
 
     public void addScore(int score) {
         scores.add(score);
         dataSheetView.update();
-
+        minMaxView.update();
     }
 
     public List<Integer> getScoreRecords() {
@@ -23,5 +24,9 @@ public class ScoreRecord {
 
     public void setDataSheetView(DataSheetView dataSheetView) {
         this.dataSheetView = dataSheetView;
+    }
+
+    public void setMinMaxView(MinMaxView minMaxView) {
+        this.minMaxView = minMaxView;
     }
 }
