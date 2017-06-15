@@ -3,6 +3,7 @@ package shibas11.DesignPattern;
 import shibas11.DesignPattern.GoF.behavioral.Command.*;
 import shibas11.DesignPattern.GoF.behavioral.Observer.DataSheetView;
 import shibas11.DesignPattern.GoF.behavioral.Observer.MinMaxView;
+import shibas11.DesignPattern.GoF.behavioral.Observer.Observer;
 import shibas11.DesignPattern.GoF.behavioral.Observer.ScoreRecord;
 import shibas11.DesignPattern.GoF.behavioral.State.Light;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.FireMon;
@@ -144,13 +145,13 @@ public class ExamRunner {
 
             case "Observer":
                 ScoreRecord scoreRecord = new ScoreRecord();
-                DataSheetView dataSheetView3 = new DataSheetView(scoreRecord, 3);
-                DataSheetView dataSheetView5 = new DataSheetView(scoreRecord, 5);
-                MinMaxView minMaxView = new MinMaxView(scoreRecord);
+                Observer dataSheetView3 = new DataSheetView(scoreRecord, 3);
+                Observer dataSheetView5 = new DataSheetView(scoreRecord, 5);
+                Observer minMaxView = new MinMaxView(scoreRecord);
 
-                scoreRecord.addDataSheetView(dataSheetView3);
-                scoreRecord.addDataSheetView(dataSheetView5);
-                scoreRecord.setMinMaxView(minMaxView);
+                scoreRecord.attach(dataSheetView3);
+                scoreRecord.attach(dataSheetView5);
+                scoreRecord.attach(minMaxView);
 
                 for (int index = 1; index <= 5; index++) {
                     int score = index * 10;

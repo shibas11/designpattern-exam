@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by shiba on 2017-06-15.
  */
-public class DataSheetView {
+public class DataSheetView implements Observer {
 
     private ScoreRecord scoreRecord;
     private int viewCount;
@@ -15,6 +15,7 @@ public class DataSheetView {
         this.viewCount = viewCount;
     }
 
+    @Override
     public void update() {
         List<Integer> record = scoreRecord.getScoreRecords();
         displayScores(record, viewCount);

@@ -1,13 +1,12 @@
 package shibas11.DesignPattern.GoF.behavioral.Observer;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by SDS on 2017-06-15.
  */
-public class MinMaxView {
+public class MinMaxView implements Observer {
 
     private ScoreRecord scoreRecord;
 
@@ -15,6 +14,7 @@ public class MinMaxView {
         this.scoreRecord = scoreRecord;
     }
 
+    @Override
     public void update() {
         List<Integer> record = scoreRecord.getScoreRecords();
         displayScores(record);
