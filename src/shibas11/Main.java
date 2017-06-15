@@ -46,6 +46,17 @@ public class Main {
         데이터 변경을 통보하고자 할 때 유용함.
         예) 탐색기 여러 개 띄워놓고 파일을 추가하거나 삭제할 때 나머지 탐색기에 즉각 변경을 통보해야 함
          */
-        runner.run("Observer");
+        //runner.run("Observer");
+
+        /*
+        구조.데커레이터 패턴 structual.Decorator
+        객체의 결합을 통해
+        기능을 동적으로 유연하게 확장할 수 있게 해줌.
+
+        기본 기능에 추가할 수 있는 기능의 종류가 많은 경우에
+        각 추가 기능을 Decorator 클래스로 정의한 후
+        필요한 Decorator 객체를 조합하여 설계하는 방식.
+         */
+        runner.run("Decorator");
     }
 }

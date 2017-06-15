@@ -16,6 +16,7 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
+import shibas11.DesignPattern.GoF.structual.Decorator.*;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -159,7 +160,20 @@ public class ExamRunner {
 
                     scoreRecord.addScore(score);
                 }
+                break;
 
+            case "Decorator":
+                Display roadDisplay = new RoadDisplay();
+                roadDisplay.draw();
+
+                Display roadDisplayWithLane = new LaneDecorator(roadDisplay);
+                roadDisplayWithLane.draw();
+
+                Display roadDisplayWithTraffic = new TrafficDecorator(roadDisplay);
+                roadDisplayWithTraffic.draw();
+
+                Display roadDisplayWithLaneAndTraffic = new LaneDecorator(new TrafficDecorator(roadDisplay));
+                roadDisplayWithLaneAndTraffic.draw();
                 break;
 
             default:
