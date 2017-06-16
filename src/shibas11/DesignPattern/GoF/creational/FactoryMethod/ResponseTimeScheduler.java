@@ -5,7 +5,7 @@ import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Direction;
 /**
  * Created by SDS on 2017-06-16.
  */
-public class ThroughputScheduler implements ElevatorScheduler {
+public class ResponseTimeScheduler implements ElevatorScheduler {
     @Override
     public int selectElevator(ElevatorManager elevatorManager, int destination, Direction direction) {
 
