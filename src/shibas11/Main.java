@@ -57,6 +57,15 @@ public class Main {
         각 추가 기능을 Decorator 클래스로 정의한 후
         필요한 Decorator 객체를 조합하여 설계하는 방식.
          */
-        runner.run("Decorator");
+        //runner.run("Decorator");
+
+        /*
+        행위.템플릿 메서드 패턴 behavioral.TemplateMethod
+        어떤 작업을 처리하는 일부분을 서브 클래스로 캡슐화해
+        전체 일을 수행하는 구조는 바꾸지 않으면서
+        특정 단계에서 수행하는 내역을 바꾸는 패턴.
+        전체적으로는 동일하면서 부분적으로는 다른 구문으로 구성된 메서드의 코드 중복을 최소화할 때 유용함.
+         */
+        runner.run("TemplateMethod");
     }
 }
