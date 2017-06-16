@@ -15,11 +15,12 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.OneMillionVoltsThun
 import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
-import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Direction;
-import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Door;
-import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.HyundaiMotor;
+import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
-import shibas11.DesignPattern.GoF.structual.Decorator.*;
+import shibas11.DesignPattern.GoF.structual.Decorator.Display;
+import shibas11.DesignPattern.GoF.structual.Decorator.LaneDecorator;
+import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplay;
+import shibas11.DesignPattern.GoF.structual.Decorator.TrafficDecorator;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
 import shibas11.DesignPattern.SOLID.DIP.Calculator;
 import shibas11.DesignPattern.SOLID.DIP.IAdder;
@@ -180,9 +181,10 @@ public class ExamRunner {
                 break;
 
             case "TemplateMethod":
-                Door door = new Door();
-                HyundaiMotor hyundaiMotor = new HyundaiMotor(door);
+                Motor hyundaiMotor = new HyundaiMotor(new Door());
                 hyundaiMotor.move(Direction.UP);
+                Motor lgMotor = new LGMotor(new Door());
+                lgMotor.move(Direction.DOWN);
                 break;
 
             default:
