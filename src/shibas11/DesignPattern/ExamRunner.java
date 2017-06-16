@@ -15,6 +15,9 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.OneMillionVoltsThun
 import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
+import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Direction;
+import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Door;
+import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.HyundaiMotor;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.GoF.structual.Decorator.*;
 import shibas11.DesignPattern.SOLID.DIP.AdderFactory;
@@ -174,6 +177,12 @@ public class ExamRunner {
 
                 Display roadDisplayWithLaneAndTraffic = new LaneDecorator(new TrafficDecorator(roadDisplay));
                 roadDisplayWithLaneAndTraffic.draw();
+                break;
+
+            case "TemplateMethod":
+                Door door = new Door();
+                HyundaiMotor hyundaiMotor = new HyundaiMotor(door);
+                hyundaiMotor.move(Direction.UP);
                 break;
 
             default:
