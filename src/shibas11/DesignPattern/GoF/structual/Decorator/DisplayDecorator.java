@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.structual.Decorator;
 
-/**
- * Created by SDS on 2017-06-15.
- */
 public abstract class DisplayDecorator extends Display {
     private Display display;
 

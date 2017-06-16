@@ -66,6 +66,12 @@ public class Main {
         특정 단계에서 수행하는 내역을 바꾸는 패턴.
         전체적으로는 동일하면서 부분적으로는 다른 구문으로 구성된 메서드의 코드 중복을 최소화할 때 유용함.
          */
-        runner.run("TemplateMethod");
+        //runner.run("TemplateMethod");
+
+        /*
+        생성.팩토리 메서드 패턴 creational.FactoryMethod
+        객체 생성 처리를 서브 클래스로 분리해 처리하도록 캡슐화하는 패턴
+         */
+        runner.run("FactoryMethod");
     }
 }

@@ -16,6 +16,8 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
+import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
+import shibas11.DesignPattern.GoF.creational.FactoryMethod.SchedulingStrategyID;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.GoF.structual.Decorator.Display;
 import shibas11.DesignPattern.GoF.structual.Decorator.LaneDecorator;
@@ -38,9 +40,6 @@ import shibas11.DesignPattern.SOLID.SRP.Student;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by shiba on 2017-06-10.
- */
 public class ExamRunner {
     public void run(String code) {
         System.out.println("=== " + code + " ===");
@@ -187,7 +186,15 @@ public class ExamRunner {
                 lgMotor.move(Direction.DOWN);
                 break;
 
-            default:
+            case "FactoryMethod":
+                ElevatorManager emWithResponseTimScheduler = new ElevatorManager(5, SchedulingStrategyID.RESPONSE_TIME);
+                emWithResponseTimScheduler.requestElevator(7, Direction.UP);
+
+                ElevatorManager emWithThroughputScheduler = new ElevatorManager(5, SchedulingStrategyID.THROUGHPUT);
+                emWithThroughputScheduler.requestElevator(3, Direction.DOWN);
+
+                ElevatorManager emWithDynamicScheduler = new ElevatorManager(5, SchedulingStrategyID.DYNAMIC);
+                emWithDynamicScheduler.requestElevator(10, Direction.UP);
                 break;
         }
         System.out.println();

@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.structual.Decorator;
 
-/**
- * Created by SDS on 2017-06-15.
- */
 public class RoadDisplayWithTraffic extends RoadDisplay {
     @Override
     public void draw() {

@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.behavioral.State;
 
-/**
- * Created by shiba on 2017-06-14.
- */
 public class OFF implements State {
 
     private static OFF off = new OFF();
