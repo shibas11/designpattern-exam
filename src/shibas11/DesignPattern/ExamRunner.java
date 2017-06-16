@@ -16,6 +16,7 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
+import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
 import shibas11.DesignPattern.GoF.structual.Decorator.Display;
 import shibas11.DesignPattern.GoF.structual.Decorator.LaneDecorator;
@@ -187,7 +188,10 @@ public class ExamRunner {
                 lgMotor.move(Direction.DOWN);
                 break;
 
-            default:
+            case "FactoryMethod":
+                ElevatorManager elevatorManager = new ElevatorManager(5);
+                elevatorManager.requestElevator(7, Direction.UP);
+                elevatorManager.requestElevator(3, Direction.DOWN);
                 break;
         }
         System.out.println();
