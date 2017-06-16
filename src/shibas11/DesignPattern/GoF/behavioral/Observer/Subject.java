@@ -3,9 +3,6 @@ package shibas11.DesignPattern.GoF.behavioral.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by SDS on 2017-06-15.
- */
 public class Subject {
 
     private List<Observer> observers = new ArrayList<>();

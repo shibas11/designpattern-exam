@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.creational.FactoryMethod;
 
-/**
- * Created by SDS on 2017-06-16.
- */
 public class ElevatorController {
     private int id;
     private int curFloor;

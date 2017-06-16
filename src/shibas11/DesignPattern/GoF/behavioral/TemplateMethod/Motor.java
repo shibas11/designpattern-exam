@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.behavioral.TemplateMethod;
 
-/**
- * Created by SDS on 2017-06-16.
- */
 public abstract class Motor {
     protected Door door;
     protected MotorStatus motorStatus;

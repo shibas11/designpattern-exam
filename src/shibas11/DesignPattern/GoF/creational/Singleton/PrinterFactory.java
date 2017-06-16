@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.creational.Singleton;
 
-/**
- * Created by SDS on 2017-06-12.
- */
 public class PrinterFactory {
     private static Printer printer;
     private static PrinterFactory printerFactory = null;

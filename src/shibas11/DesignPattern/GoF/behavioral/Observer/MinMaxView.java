@@ -3,9 +3,6 @@ package shibas11.DesignPattern.GoF.behavioral.Observer;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by SDS on 2017-06-15.
- */
 public class MinMaxView implements Observer {
 
     private ScoreRecord scoreRecord;

@@ -2,9 +2,6 @@ package shibas11.DesignPattern.GoF.behavioral.Observer;
 
 import java.util.List;
 
-/**
- * Created by shiba on 2017-06-15.
- */
 public class DataSheetView implements Observer {
 
     private ScoreRecord scoreRecord;

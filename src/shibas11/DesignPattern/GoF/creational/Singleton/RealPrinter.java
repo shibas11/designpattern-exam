@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.creational.Singleton;
 
-/**
- * Created by shiba on 2017-06-11.
- */
 public class RealPrinter implements Printer { // 싱글턴 적용
     private static RealPrinter printer = null;
     private int counter = 0;

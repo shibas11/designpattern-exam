@@ -5,9 +5,6 @@ import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by SDS on 2017-06-16.
- */
 public class ElevatorManager {
     private SchedulingStrategyID strategyID;
     private List<ElevatorController> controllers;

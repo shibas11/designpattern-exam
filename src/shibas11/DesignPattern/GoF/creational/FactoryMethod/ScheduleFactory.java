@@ -2,9 +2,6 @@ package shibas11.DesignPattern.GoF.creational.FactoryMethod;
 
 import java.util.Calendar;
 
-/**
- * Created by SDS on 2017-06-16.
- */
 public class ScheduleFactory {
     public static ElevatorScheduler getScheduler(SchedulingStrategyID strategyID) {
         ElevatorScheduler scheduler = null;

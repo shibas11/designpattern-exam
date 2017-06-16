@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.behavioral.State;
 
-/**
- * Created by shiba on 2017-06-14.
- */
 public class SLEEPING implements State {
 
     private static SLEEPING sleeping = new SLEEPING();

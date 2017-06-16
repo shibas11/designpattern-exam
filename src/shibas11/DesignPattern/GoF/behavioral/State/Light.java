@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.GoF.behavioral.State;
 
-/**
- * Created by shiba on 2017-06-13.
- */
 public class Light {
     private State state; // 형광등 상태
 

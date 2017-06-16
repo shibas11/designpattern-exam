@@ -40,9 +40,6 @@ import shibas11.DesignPattern.SOLID.SRP.Student;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by shiba on 2017-06-10.
- */
 public class ExamRunner {
     public void run(String code) {
         System.out.println("=== " + code + " ===");

@@ -3,9 +3,6 @@ package shibas11.DesignPattern.GoF.behavioral.Strategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.AttackStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.MovingStrategy;
 
-/**
- * Created by shiba on 2017-06-11.
- */
 public class PocketMonster {
     private String name;
     private MovingStrategy movingStrategy;

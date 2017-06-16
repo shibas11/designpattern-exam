@@ -1,8 +1,5 @@
 package shibas11.DesignPattern.SOLID.OCP;
 
-/**
- * Created by shiba on 2017-06-11.
- */
 public class Triangle implements Shape {
     private double width;
     private double height;
