@@ -7,14 +7,15 @@ public class Door {
     private DoorStatus doorStatus;
 
     public Door() {
-        doorStatus = DoorStatus.CLOSED;;
+        doorStatus = DoorStatus.CLOSED;
     }
 
     public void close() {
         doorStatus = DoorStatus.CLOSED;
     }
+
     public void open() {
-        doorStatus=DoorStatus.OPENED;
+        doorStatus = DoorStatus.OPENED;
     }
 
     public DoorStatus getDoorStatus() {

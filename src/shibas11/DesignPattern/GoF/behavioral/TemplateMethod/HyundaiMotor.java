@@ -3,13 +3,10 @@ package shibas11.DesignPattern.GoF.behavioral.TemplateMethod;
 /**
  * Created by SDS on 2017-06-16.
  */
-public class HyundaiMotor {
-    private Door door;
-    private MotorStatus motorStatus;
+public class HyundaiMotor extends Motor {
 
     public HyundaiMotor(Door door) {
-        this.door = door;
-        motorStatus = MotorStatus.STOPPED;
+        super(door);
     }
 
     public void move(Direction direction) {
@@ -28,13 +25,5 @@ public class HyundaiMotor {
     private void moveHyundaiMotor(Direction direction) {
         // Hyundai Motor를 구동시킴
         System.out.println(this.getClass().getSimpleName() + " 구동시킴");
-    }
-
-    public MotorStatus getMotorStatus() {
-        return motorStatus;
-    }
-
-    public void setMotorStatus(MotorStatus motorStatus) {
-        this.motorStatus = motorStatus;
     }
 }
