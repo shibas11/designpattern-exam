@@ -16,8 +16,10 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.HyundaiMusicPlayer;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.LGMusicPlayer;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.HyundaiSpeaker;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.LGSpeaker;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
@@ -202,11 +204,11 @@ public class ExamRunner {
                 break;
 
             case "AbstractFactory":
-                Speaker lgSpeaker = new LGSpeaker();
-                MusicPlayer lgMusicPlayer = new LGMusicPlayer();
-                lgMusicPlayer.setSpeaker(lgSpeaker);
+                Speaker hyundaiSpeaker = new HyundaiSpeaker();
+                MusicPlayer hyundaiMusicPlayer = new HyundaiMusicPlayer();
+                hyundaiMusicPlayer.setSpeaker(hyundaiSpeaker);
 
-                lgMusicPlayer.play();
+                hyundaiMusicPlayer.play();
                 break;
         }
         System.out.println();

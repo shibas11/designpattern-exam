@@ -6,4 +6,5 @@ package shibas11.DesignPattern.GoF.creational.AbstractFactory;
 public enum VendorId {
     Hyundai,
     LG,
+    SAMSUNG,
 }

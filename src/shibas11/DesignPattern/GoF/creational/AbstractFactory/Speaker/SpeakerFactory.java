@@ -15,6 +15,9 @@ public class SpeakerFactory {
             case LG:
                 speaker = new LGSpeaker();
                 break;
+            case SAMSUNG:
+                speaker = new SamsungSpeaker();
+                break;
         }
         return speaker;
     }
