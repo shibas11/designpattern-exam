@@ -1,7 +1,5 @@
 package shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker;
 
-import shibas11.DesignPattern.GoF.creational.AbstractFactory.SpeakerStatus;
-
 /**
  * Created by shiba on 2017-06-18.
  */
