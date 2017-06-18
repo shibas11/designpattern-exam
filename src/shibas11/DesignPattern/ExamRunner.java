@@ -16,12 +16,9 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
-import shibas11.DesignPattern.GoF.creational.AbstractFactory.HyundaiPlayerFactory;
-import shibas11.DesignPattern.GoF.creational.AbstractFactory.LGPlayerFactory;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.*;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer.MusicPlayer;
-import shibas11.DesignPattern.GoF.creational.AbstractFactory.PlayerFactory;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
-import shibas11.DesignPattern.GoF.creational.AbstractFactory.VendorId;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.SchedulingStrategyID;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
@@ -205,9 +202,11 @@ public class ExamRunner {
 
             case "AbstractFactory":
                 PlayerFactory playerFactory = null;
-                VendorId vendorId = VendorId.LG; // 사용자로부터 입력받는다고 가정
+                VendorId vendorId = VendorId.SAMSUNG; // 사용자로부터 입력받는다고 가정
                 if (vendorId == VendorId.Hyundai)
                     playerFactory = new HyundaiPlayerFactory();
+                else if(vendorId == VendorId.SAMSUNG)
+                    playerFactory = new SamsungPlayerFactory();
                 else
                     playerFactory = new LGPlayerFactory();
 
