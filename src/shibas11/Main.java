@@ -72,6 +72,13 @@ public class Main {
         생성.팩토리 메서드 패턴 creational.FactoryMethod
         객체 생성 처리를 서브 클래스로 분리해 처리하도록 캡슐화하는 패턴
          */
-        runner.run("FactoryMethod");
+        //runner.run("FactoryMethod");
+
+        /*
+        생성.추상 팩토리 패턴 creational.AbstractFactory
+        구체적인 클래스에 의존하지 않고
+        서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
+         */
+        runner.run("AbstractFactory");
     }
 }

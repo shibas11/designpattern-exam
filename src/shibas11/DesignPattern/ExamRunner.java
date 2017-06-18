@@ -16,6 +16,10 @@ import shibas11.DesignPattern.GoF.behavioral.Strategy.attack.WaterBombStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.RunningStrategy;
 import shibas11.DesignPattern.GoF.behavioral.Strategy.move.SwimmingStrategy;
 import shibas11.DesignPattern.GoF.behavioral.TemplateMethod.*;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.LGMusicPlayer;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.LGSpeaker;
+import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.SchedulingStrategyID;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
@@ -195,6 +199,14 @@ public class ExamRunner {
 
                 ElevatorManager emWithDynamicScheduler = new ElevatorManager(5, SchedulingStrategyID.DYNAMIC);
                 emWithDynamicScheduler.requestElevator(10, Direction.UP);
+                break;
+
+            case "AbstractFactory":
+                Speaker lgSpeaker = new LGSpeaker();
+                MusicPlayer lgMusicPlayer = new LGMusicPlayer();
+                lgMusicPlayer.setSpeaker(lgSpeaker);
+
+                lgMusicPlayer.play();
                 break;
         }
         System.out.println();
