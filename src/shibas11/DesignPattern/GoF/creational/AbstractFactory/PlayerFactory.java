@@ -3,8 +3,8 @@ package shibas11.DesignPattern.GoF.creational.AbstractFactory;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer.MusicPlayer;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 
-public interface PlayerFactory {
-    Speaker createSpeaker();
+public abstract class PlayerFactory {
+    public abstract Speaker createSpeaker();
 
-    MusicPlayer createMusicPlayer();
+    public abstract MusicPlayer createMusicPlayer();
 }

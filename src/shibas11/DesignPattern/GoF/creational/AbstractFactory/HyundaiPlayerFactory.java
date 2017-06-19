@@ -5,10 +5,7 @@ import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer.MusicPl
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.HyundaiSpeaker;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 
-/**
- * Created by shiba on 2017-06-18.
- */
-public class HyundaiPlayerFactory implements PlayerFactory {
+public class HyundaiPlayerFactory extends PlayerFactory {
     @Override
     public Speaker createSpeaker() {
         return new HyundaiSpeaker();

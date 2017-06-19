@@ -5,7 +5,7 @@ import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer.Samsung
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.SamsungSpeaker;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 
-public class SamsungPlayerFactory implements PlayerFactory {
+public class SamsungPlayerFactory extends PlayerFactory {
     @Override
     public Speaker createSpeaker() {
         return new SamsungSpeaker();

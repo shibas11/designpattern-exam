@@ -5,7 +5,7 @@ import shibas11.DesignPattern.GoF.creational.AbstractFactory.MusicPlayer.MusicPl
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.LGSpeaker;
 import shibas11.DesignPattern.GoF.creational.AbstractFactory.Speaker.Speaker;
 
-public class LGPlayerFactory implements PlayerFactory {
+public class LGPlayerFactory extends PlayerFactory {
     @Override
     public Speaker createSpeaker() {
         return new LGSpeaker();

@@ -77,7 +77,9 @@ public class Main {
         /*
         생성.추상 팩토리 패턴 creational.AbstractFactory
         구체적인 클래스에 의존하지 않고
-        서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
+        서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴.
+        여러 종류의 객체를 일관된 방식으로 생성하는 경우에 유용함.
+        예) 부품별 Factory 클래스를 정의하는 대신 제조업체별 Factory 클래스 정의
          */
         runner.run("AbstractFactory");
     }
