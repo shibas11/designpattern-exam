@@ -24,10 +24,7 @@ import shibas11.DesignPattern.GoF.creational.AbstractFactory.VendorId;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.SchedulingStrategyID;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
-import shibas11.DesignPattern.GoF.structual.Composite.Body;
-import shibas11.DesignPattern.GoF.structual.Composite.Computer;
-import shibas11.DesignPattern.GoF.structual.Composite.Keyboard;
-import shibas11.DesignPattern.GoF.structual.Composite.Monitor;
+import shibas11.DesignPattern.GoF.structual.Composite.*;
 import shibas11.DesignPattern.GoF.structual.Decorator.Display;
 import shibas11.DesignPattern.GoF.structual.Decorator.LaneDecorator;
 import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplay;
@@ -222,11 +219,13 @@ public class ExamRunner {
                 Body body = new Body(100, 70);
                 Keyboard keyboard = new Keyboard(5, 2);
                 Monitor monitor = new Monitor(20, 30);
+                Mouse mouse = new Mouse(8, 3);
 
                 Computer computer = new Computer();
                 computer.addBody(body);
                 computer.addKeyboard(keyboard);
                 computer.addMonitor(monitor);
+                computer.addMouse(mouse);
 
                 int computerPrice = computer.getPrice();
                 int computerPower = computer.getPower();

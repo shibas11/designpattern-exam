@@ -4,6 +4,7 @@ public class Computer {
     private Body body;
     private Keyboard keyboard;
     private Monitor monitor;
+    private Mouse mouse;
 
     public void addBody(Body body) {
         this.body = body;
@@ -17,18 +18,24 @@ public class Computer {
         this.monitor = monitor;
     }
 
+    public void addMouse(Mouse mouse) {
+        this.mouse = mouse;
+    }
+
     public int getPrice() {
         int bodyPrice = body.getPrice();
         int keyboardPrice = keyboard.getPrice();
-        int modnitorPrice = monitor.getPrice();
-        return bodyPrice + keyboardPrice + modnitorPrice;
+        int monitorPrice = monitor.getPrice();
+        int mousePrice = mouse.getPrice();
+        return bodyPrice + keyboardPrice + monitorPrice + mousePrice;
     }
 
     public int getPower() {
         int bodyPower = body.getPower();
         int keyboardPower = keyboard.getPower();
         int monitorPower = monitor.getPower();
-        return bodyPower + keyboardPower + monitorPower;
+        int mousePower = mouse.getPower();
+        return bodyPower + keyboardPower + monitorPower + mousePower;
     }
 
 }
