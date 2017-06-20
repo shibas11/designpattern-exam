@@ -24,6 +24,10 @@ import shibas11.DesignPattern.GoF.creational.AbstractFactory.VendorId;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.ElevatorManager;
 import shibas11.DesignPattern.GoF.creational.FactoryMethod.SchedulingStrategyID;
 import shibas11.DesignPattern.GoF.creational.Singleton.UserThread;
+import shibas11.DesignPattern.GoF.structual.Composite.Body;
+import shibas11.DesignPattern.GoF.structual.Composite.Computer;
+import shibas11.DesignPattern.GoF.structual.Composite.Keyboard;
+import shibas11.DesignPattern.GoF.structual.Composite.Monitor;
 import shibas11.DesignPattern.GoF.structual.Decorator.Display;
 import shibas11.DesignPattern.GoF.structual.Decorator.LaneDecorator;
 import shibas11.DesignPattern.GoF.structual.Decorator.RoadDisplay;
@@ -203,7 +207,7 @@ public class ExamRunner {
                 break;
 
             case "AbstractFactory":
-                PlayerFactory playerFactory = null;
+                PlayerFactory playerFactory;
                 VendorId vendorId = VendorId.LG; // 사용자로부터 입력받는다고 가정
                 playerFactory = PlayerFactoryFactory.getFactory(vendorId);
 
@@ -212,6 +216,22 @@ public class ExamRunner {
                 musicPlayer.setSpeaker(speaker);
 
                 musicPlayer.play();
+                break;
+
+            case "Composite":
+                Body body = new Body(100, 70);
+                Keyboard keyboard = new Keyboard(5, 2);
+                Monitor monitor = new Monitor(20, 30);
+
+                Computer computer = new Computer();
+                computer.addBody(body);
+                computer.addKeyboard(keyboard);
+                computer.addMonitor(monitor);
+
+                int computerPrice = computer.getPrice();
+                int computerPower = computer.getPower();
+                System.out.println("Computer Price: " + computerPrice);
+                System.out.println("Computer Power: " + computerPower);
                 break;
         }
         System.out.println();

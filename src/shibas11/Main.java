@@ -81,6 +81,13 @@ public class Main {
         여러 종류의 객체를 일관된 방식으로 생성하는 경우에 유용함.
         예) 부품별 Factory 클래스를 정의하는 대신 제조업체별 Factory 클래스 정의
          */
-        runner.run("AbstractFactory");
+        //runner.run("AbstractFactory");
+
+        /*
+        구조.컴퍼지트 패턴 structual.Composite
+        여러 개의 객체들로 구성된 복합 객체와 단일 객체를
+        클라이언트에서 구별 없이 다루게 해주는 패턴
+         */
+        runner.run("Composite");
     }
 }
