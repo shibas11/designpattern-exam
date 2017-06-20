@@ -222,10 +222,10 @@ public class ExamRunner {
                 Mouse mouse = new Mouse(8, 3);
 
                 Computer computer = new Computer();
-                computer.addBody(body);
-                computer.addKeyboard(keyboard);
-                computer.addMonitor(monitor);
-                computer.addMouse(mouse);
+                computer.addComponent(body);
+                computer.addComponent(keyboard);
+                computer.addComponent(monitor);
+                computer.addComponent(mouse);
 
                 int computerPrice = computer.getPrice();
                 int computerPower = computer.getPower();

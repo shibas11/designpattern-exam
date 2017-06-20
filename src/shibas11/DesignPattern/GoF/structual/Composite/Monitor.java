@@ -1,6 +1,6 @@
 package shibas11.DesignPattern.GoF.structual.Composite;
 
-public class Monitor {
+public class Monitor extends ComputerDevice {
     private int price;
     private int power;
 
@@ -9,10 +9,12 @@ public class Monitor {
         this.power = power;
     }
 
+    @Override
     public int getPrice() {
         return price;
     }
 
+    @Override
     public int getPower() {
         return power;
     }
