@@ -6,11 +6,11 @@ public class Main {
 
     public static void main(String[] args) {
         ExamRunner runner = new ExamRunner();
-//        runner.run("SOLID.SRP"); // Single Responsibility   책임 분리: 클래스는 한 개의 책임만 가져라
-//        runner.run("SOLID.OCP"); // Open-Closed             개방-폐쇄: 기존 코드 변경없이 새 기능 추가해라, UnitTest!!
-//        runner.run("SOLID.LSP"); // Liskov Substitution     리스코프 치환: 부모,자식 클래스 사이의 행위의 일관성
-//        runner.run("SOLID.DIP"); // Dependency Inversion    의존 역전: 변하지 않거나 변하기 어려운 것(추상)에 의존하라
-//        runner.run("SOLID.ISP"); // Interface Segregation   인터페이스 분리: 클라이언트에 특화되도록 인터페이스 분리해라
+        //        runner.run("SOLID.SRP"); // Single Responsibility   책임 분리: 클래스는 한 개의 책임만 가져라
+        //        runner.run("SOLID.OCP"); // Open-Closed             개방-폐쇄: 기존 코드 변경없이 새 기능 추가해라, UnitTest!!
+        //        runner.run("SOLID.LSP"); // Liskov Substitution     리스코프 치환: 부모,자식 클래스 사이의 행위의 일관성
+        //        runner.run("SOLID.DIP"); // Dependency Inversion    의존 역전: 변하지 않거나 변하기 어려운 것(추상)에 의존하라
+        //        runner.run("SOLID.ISP"); // Interface Segregation   인터페이스 분리: 클라이언트에 특화되도록 인터페이스 분리해라
 
         /*
         행위.스트래티지 패턴 behavioral.Strategy
@@ -89,6 +89,17 @@ public class Main {
         클라이언트에서 구별 없이 다루게 해주는 패턴.
         part-whole 관계를 갖는 객체들을 정의할 때 유용함.
          */
-        runner.run("Composite");
+        //runner.run("Composite");
+
+        /*
+        행위.책임 연쇄 패턴 behavioral.ChainOfResponsibility
+        요청을 처리할 수 있는 기회를 하나 이상의 객체에게 부여하여
+        요청을 보내는 객체와 그 요청을 받는 개체 사이의 결합을 피하는 패턴.
+        요청을 받을 수 있는 객체를 연쇄적으로 묶고,
+        실제 요청을 처리할 객체를 만날 때까지 객체 고리를 따라서 요청을 전달.
+         */
+        runner.run(("ChainOfResponsibility"));
+        System.out.println();
+        runner.run(("ChainOfResponsibility.PurchasePower"));
     }
 }
