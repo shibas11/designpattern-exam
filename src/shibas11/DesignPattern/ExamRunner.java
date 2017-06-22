@@ -1,5 +1,9 @@
 package shibas11.DesignPattern;
 
+import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.EmailLogger;
+import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.Logger;
+import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.StderrLogger;
+import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.StdoutLogger;
 import shibas11.DesignPattern.GoF.behavioral.Command.*;
 import shibas11.DesignPattern.GoF.behavioral.Observer.DataSheetView;
 import shibas11.DesignPattern.GoF.behavioral.Observer.MinMaxView;
@@ -232,6 +236,24 @@ public class ExamRunner {
                 System.out.println("Computer Price: " + computerPrice);
                 System.out.println("Computer Power: " + computerPower);
                 break;
+
+            case "ChainOfResponsibility":
+                // Build the chain of responsibility
+                Logger logger, loggerNext;
+                loggerNext = logger = new StdoutLogger(Logger.NORMAL);
+                loggerNext = loggerNext.setNext(new EmailLogger(Logger.WARNING));
+                loggerNext = loggerNext.setNext(new StderrLogger(Logger.ERR));
+
+                // Handled by StdoutLogger
+                logger.message("Normal Message.", Logger.NORMAL);
+                System.out.println();
+
+                // Handled by StdoutLogger and EmailLogger
+                logger.message("Warning fired.", Logger.WARNING);
+                System.out.println();
+
+                // Handled by all three loggers
+                logger.message("An error has occurred.", Logger.ERR);
         }
         System.out.println();
     }
