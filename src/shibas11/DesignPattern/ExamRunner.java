@@ -4,6 +4,7 @@ import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.EmailL
 import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.Logger;
 import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.StderrLogger;
 import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.Logger.StdoutLogger;
+import shibas11.DesignPattern.GoF.behavioral.ChainOfResponsibility.PurchasePower.*;
 import shibas11.DesignPattern.GoF.behavioral.Command.*;
 import shibas11.DesignPattern.GoF.behavioral.Observer.DataSheetView;
 import shibas11.DesignPattern.GoF.behavioral.Observer.MinMaxView;
@@ -47,6 +48,8 @@ import shibas11.DesignPattern.SOLID.OCP.Triangle;
 import shibas11.DesignPattern.SOLID.SRP.Employee;
 import shibas11.DesignPattern.SOLID.SRP.Student;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -119,12 +122,12 @@ public class ExamRunner {
                 break;
 
             case "Singleton":
-//                final int User_NUM = 5;
-//                User[] user = new User[User_NUM];
-//                for(int i=0;i<User_NUM;i++) {
-//                    user[i] = new User((i+1) +"-user");
-//                    user[i].print();
-//                }
+                //                final int User_NUM = 5;
+                //                User[] user = new User[User_NUM];
+                //                for(int i=0;i<User_NUM;i++) {
+                //                    user[i] = new User((i+1) +"-user");
+                //                    user[i].print();
+                //                }
                 final int Thread_NUM = 5;
                 UserThread[] tuser = new UserThread[Thread_NUM];
                 for (int i = 0; i < Thread_NUM; i++) {
@@ -254,6 +257,32 @@ public class ExamRunner {
 
                 // Handled by all three loggers
                 logger.message("An error has occurred.", Logger.ERR);
+                break;
+
+            case "ChainOfResponsibility.PurchasePower":
+                ManagerPower manager = new ManagerPower();
+                DirectorPower director = new DirectorPower();
+                VisePresidentPower visePresident = new VisePresidentPower();
+                PresidentPower president = new PresidentPower();
+                manager.setSuccessor(director);
+                director.setSuccessor(visePresident);
+                visePresident.setSuccessor(president);
+
+                int max = 5;
+                int cnt = 0;
+                try {
+                    while (cnt < max) {
+                        System.out.println("Enter the amount to check who should approve your expenditure.");
+                        System.out.println(">");
+                        double d = Double.parseDouble(new BufferedReader(new InputStreamReader(System.in)).readLine());
+                        manager.processRequest(new PurchaseRequest(0, d, "General"));
+
+                        cnt++;
+                    }
+                } catch (Exception ex) {
+                    System.exit(1);
+                }
+                break;
         }
         System.out.println();
     }

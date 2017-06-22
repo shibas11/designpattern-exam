@@ -99,5 +99,7 @@ public class Main {
         실제 요청을 처리할 객체를 만날 때까지 객체 고리를 따라서 요청을 전달.
          */
         runner.run(("ChainOfResponsibility"));
+        System.out.println();
+        runner.run(("ChainOfResponsibility.PurchasePower"));
     }
 }

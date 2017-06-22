@@ -13,11 +13,12 @@ public abstract class Logger {
             writeMessage(msg);
         }
 
-        if (next != null) {
+        if (next != null) { // 무조건 다음 처리기를 호출한다.
             next.message(msg, priority);
         }
     }
 
+    // setter임에도 불구하고 void 대신 Logger를 반환한다.
     public Logger setNext(Logger logger) {
         this.next = logger;
         return logger;
